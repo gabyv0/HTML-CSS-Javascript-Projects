@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+  line-height: 1.5;
+  text-transform: uppercase;
+  background-color:#51b4b9e8;
+  font-family: Arial;
+}
+
+h1 {
+  text-align: center;
+  padding: 10px;
+}
+
+h2 {
+  text-align: center;
+  color: white;
+  font-size: 75px;
+  font-weight: bold;
+  padding: 15px;
+}
+
+p {
+  padding: 10px;
+}
+
+.fdm {
+  color: white;
+  font-weight: bold;
+}
+
+.centerPart {
+  padding: 200px;
+}
+
+.box {
+  border: 2px  solid white;
+  width: 175px;
+  padding: 2px;
+  text-align: center;
+  margin: 0 auto;
+  color: white;
+}
+
