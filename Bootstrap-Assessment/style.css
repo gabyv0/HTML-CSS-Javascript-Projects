@@ -1,0 +1,46 @@
+body {
+  line-height: 1.5;
+  background-color:#886de9e8;
+  font-family: 'Abril Fatface', cursive;
+}
+
+
+.jumbotron {
+  background-color: #886de9e8;
+}
+
+nav {
+  margin-bottom: 150px;
+}
+
+h1 {
+  font-family: 'Unica One', cursive;
+}
+
+h2 {
+  color: white;
+}
+
+
+.card {
+  background-color: #886de9e8;
+}
+
+
+@media screen and (max-width: 768px) {
+  body {
+    background-color: #5da3c4e8
+  }
+
+  .container {
+    width: 300px;
+  }
+
+  .jumbotron {
+    background-color: #5da3c4e8
+  }
+
+  .card {
+    background-color: #5da3c4e8
+  }
+}
