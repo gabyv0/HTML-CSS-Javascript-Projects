@@ -1,0 +1,114 @@
+body {
+    background-image: url("../images/memphis-colorful.png");
+    font-family: 'Arial', 'Helvetica Neue', Helvetica, sans-serif;
+    margin-bottom: 300px;
+    min-height: 300px;
+    clear: both;
+}
+
+.headings {
+    color: #4aaaa5;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.container {
+    line-height: 1.75;
+    color: #777777;
+    background-color: #ffffff; 
+    margin: auto;
+    padding: 1.5% 2%;
+    width: 960px;
+    border: 2px solid #dddddd;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/** contact me **/
+.btn-primary {
+    background-color: #4aaaa5 !important;
+}
+
+/** portfolio **/
+#imgtxt {
+    background-color: #4aaaa5;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    max-width: 100%;
+    position: relative;
+    bottom: 75px;
+}
+
+/** navbar **/
+nav {
+    background-color: #ffffff;
+    border-bottom: 2px solid #cccccc;
+    padding: 0 !important;
+    width: 100%;
+    margin-bottom: 50px;
+}
+.navbar-nav>li{
+    border-right: 1px solid #cccccc;
+  }
+
+.navbar-nav>li:last-child {
+    border: none;
+    margin-right: 270px;
+}
+
+.navbar-brand {
+    background-color:#4aaaa5;
+    padding: 20px;
+    margin-left: 280px;
+    font-family: 'Georgia';
+    font-weight: bold;
+}
+
+.navbar-light .navbar-brand {
+    color: white;
+}
+
+/** sticky footer **/
+footer {
+    background-color: #666666;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    clear: both;
+    border-top: 10px solid #4aaaa5;
+    padding-top: 3%;
+}
+
+/** xs screens **/
+@media screen and (max-width: 768px) {
+    body {
+        margin-bottom: 500px;
+        min-height: 500px;
+    }
+
+    footer {
+        padding-top: 0;
+    }
+
+    .container {
+        max-width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        position: absolute;
+    }
+
+    .navbar-nav>li:last-child {
+        border: none;
+        margin-right: 500px;
+    }
+
+    .navbar-brand {
+        margin-left: 50px;
+    }
+} 
