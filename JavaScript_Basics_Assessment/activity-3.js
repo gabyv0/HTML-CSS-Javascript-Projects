@@ -1,7 +1,7 @@
 const studentNames = ['John', 'Jane', 'Sam'];
 let counter = 0;
 
-while (counter <= 2) {
+while (counter < 3) {
     let name = prompt('Please enter a name: ');
     studentNames.push(name);
     counter++;
