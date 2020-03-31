@@ -1,10 +1,15 @@
+body {
+    background-image: url("../images/greyfloral.png");
+    font-family: 'Playfair Display', serif;
+}
+
 .container {
-    background-color: pink;
+    background-color: rgb(255, 209, 216);
     color: black;
-    margin: auto;
-    padding: 20px;
+    margin-top: 40px;
+    padding: 1.5% 2%;
     width: 960px;
-    border: 2px solid magenta;
+    border: 2px solid rgb(184, 134, 184);
 }
 
 .img-fluid {
@@ -14,4 +19,20 @@
 
 h1, h2, h3, p {
     text-align: center;
+    color: #777777;
+    padding: 5px;
+}
+
+h2, h3 {
+    padding: 10px;
+    font-weight: bold;
+}
+
+h1 {
+    font-family: 'Abril Fatface', cursive;
+    color: black;
+}
+
+p {
+    font-size: large;
 }
