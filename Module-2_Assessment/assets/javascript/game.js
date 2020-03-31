@@ -32,7 +32,6 @@ numGuessesP.innerText = 15;
 numWinsP.innerText = 0;
 underscoresP.innerText = underscoreList.join(' ');
 
-
 const game = function(event) {
     let eventKey = event.key.toLowerCase(); 
 
@@ -41,6 +40,12 @@ const game = function(event) {
         guessedLettersList.push(eventKey);
         guessedLetters += ` ${eventKey}`;
         guessedLetsP.innerText = guessedLetters;
+
+        if (currWordList.includes(eventKey) === false) {
+            numGuesses--;
+            numGuessesP.innerText = numGuesses;
+            underscoresP.innerText = underscoreList.join(' ');
+        }
     }
 
     //check if guessed letter is correct
@@ -53,10 +58,7 @@ const game = function(event) {
             }
         }
         winOrlose();    
-    } else {
-        numGuesses--;
-        numGuessesP.innerText = numGuesses;
-        underscoresP.innerText = underscoreList.join(' ');
+    } else {  
         winOrlose();
     }
 }
