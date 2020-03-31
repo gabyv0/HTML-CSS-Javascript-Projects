@@ -9,6 +9,7 @@ let correctGuessesCounter = 0; // to later check if all correct guesses made
 let underscoreList = []; // array of underscores same length as currWord
 let numGuesses = 15;    // number of guesses left
 let guessedLettersList = [];    // letters guessed already
+let guessedLetters= ''; //for display on HTML
 let numWins = 0;    // number of won games
 
 let numWinsP = document.querySelector('#numberOfWins');
@@ -31,7 +32,7 @@ const underscoreMaker = function() {
 console.log(underscoreMaker()); //DELETE check, make sure to ADD TO GAME
 numGuessesP.innerText = 15;
 numWinsP.innerText = 0;
-underscoresP.innerText = underscoreList;
+underscoresP.innerText = underscoreList.join(' ');
 
 
 const game = function(event) {
@@ -40,7 +41,8 @@ const game = function(event) {
     //if guessed letter not already guessed
     if(guessedLettersList.includes(event.key) === false) {
         guessedLettersList.push(event.key);
-        guessedLetsP.innerText = guessedLettersList;
+        guessedLetters += ` ${event.key}`;
+        guessedLetsP.innerText = guessedLetters;
     }
     console.log(guessedLettersList); //DELETE check
 
@@ -50,21 +52,19 @@ const game = function(event) {
             if (event.key === currWordList[i]) {
                 underscoreList[i] = event.key;
                 console.log(underscoreList); //DELETE
-                underscoresP.innerText = underscoreList;
+                underscoresP.innerText = underscoreList.join(' ');
             }
         }
         winOrlose();   
     } else {
         numGuesses--;
         numGuessesP.innerText = numGuesses;
-        underscoresP.innerText = underscoreList;
+        underscoresP.innerText = underscoreList.join(' ');
         winOrlose();
         console.log(numGuesses); //DELETE check    
     }
 
 }
-
-document.addEventListener('keypress', game);
 
 const winOrlose = function() {
     if(underscoreList.includes('_') === false) {
@@ -90,14 +90,15 @@ const reset = function() {
     underscoreList = []; 
     numGuesses = 15;    
     guessedLettersList = [];
+    guessedLetters= '';
     correctGuessesCounter = 0;
 
     underscoreMaker();  
 
-    underscoresP.innerText = underscoreList;
+    underscoresP.innerText = underscoreList.join(' ');
     numGuessesP.innerText = 15;
-    guessedLetsP.innerText = guessedLettersList;
+    guessedLetsP.innerText = guessedLetters;
 }
 
-
+document.addEventListener('keypress', game);
 
