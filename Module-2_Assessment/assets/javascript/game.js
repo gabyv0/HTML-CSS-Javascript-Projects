@@ -5,12 +5,12 @@ const flowerList = ['hyacinth', 'daisy', 'tulip', 'windflower', 'rose',
 // current word to guess, chosen randomly using random num generator
 let currWord = flowerList[Math.floor(Math.random() * flowerList.length)];
 let currWordList= currWord.split('');   // splits currWord into individual letters in an array
-let correctGuessesCounter = 0; // to later check if all correct guesses made
 let underscoreList = []; // array of underscores same length as currWord
 let numGuesses = 15;    // number of guesses left
 let guessedLettersList = [];    // letters guessed already
 let guessedLetters= ''; //for display on HTML
 let numWins = 0;    // number of won games
+
 
 let numWinsP = document.querySelector('#numberOfWins');
 let underscoresP = document.querySelector('#underscores');
@@ -29,7 +29,8 @@ const underscoreMaker = function() {
     return underscoreList;
 }
 
-console.log(underscoreMaker()); //DELETE check, make sure to ADD TO GAME
+// initializa display before game starts
+underscoreMaker();
 numGuessesP.innerText = 15;
 numWinsP.innerText = 0;
 underscoresP.innerText = underscoreList.join(' ');
@@ -37,8 +38,7 @@ underscoresP.innerText = underscoreList.join(' ');
 
 const game = function(event) {
     console.log(event.key); //DELETE check
-
-    //if guessed letter not already guessed
+    //check if guessed letter has not already been guessed
     if(guessedLettersList.includes(event.key) === false) {
         guessedLettersList.push(event.key);
         guessedLetters += ` ${event.key}`;
@@ -46,7 +46,7 @@ const game = function(event) {
     }
     console.log(guessedLettersList); //DELETE check
 
-    //if guessed letter is correct
+    //check if guessed letter is correct
     if (currWordList.includes(event.key)) {
         for(let i = 0; i < currWordList.length; i++) {
             if (event.key === currWordList[i]) {
@@ -66,15 +66,19 @@ const game = function(event) {
 
 }
 
+// check if game has been won or lost yet
 const winOrlose = function() {
     if(underscoreList.includes('_') === false) {
         numWins++;
         numWinsP.innerText = numWins;
+        new Audio("assets/sounds/yay.mp3").play();
+        underscoresP.innerText = underscoreList.join(' ');
         alert('You won!');
         reset();
     }
 
     if (numGuesses === 0) {
+        new Audio("assets/sounds/oh-no.mp3").play();
         alert('You lost! :( ')
         reset();
         console.log(currWord); //DELETE
@@ -83,7 +87,7 @@ const winOrlose = function() {
     }
 }
 
-
+// reset game, except for number of wins
 const reset = function() {
     currWord = flowerList[Math.floor(Math.random() * flowerList.length)];
     currWordList= currWord.split('');   
@@ -91,7 +95,6 @@ const reset = function() {
     numGuesses = 15;    
     guessedLettersList = [];
     guessedLetters= '';
-    correctGuessesCounter = 0;
 
     underscoreMaker();  
 
