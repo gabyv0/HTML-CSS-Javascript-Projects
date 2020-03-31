@@ -1,0 +1,17 @@
+.container {
+    background-color: pink;
+    color: black;
+    margin: auto;
+    padding: 20px;
+    width: 960px;
+    border: 2px solid magenta;
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+h1, h2, h3, p {
+    text-align: center;
+}
