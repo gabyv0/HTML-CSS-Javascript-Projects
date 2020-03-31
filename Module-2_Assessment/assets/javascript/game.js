@@ -1,9 +1,11 @@
 const flowerList = ['hyacinth', 'daisy', 'tulip', 'windflower', 'rose',
-    'lily', 'sunflower', 'pansy', 'poinsettia'];
+    'lily', 'sunflower', 'pansy','orchid', 'carnation', 'iris', 'violet',
+    'dahlia', 'lilac', 'peony', 'hydrangea'];
 
 // current word to guess, chosen randomly using random num generator
 let currWord = flowerList[Math.floor(Math.random() * flowerList.length)];
 let currWordList= currWord.split('');   // splits currWord into individual letters in an array
+let correctGuessesCounter = 0; // to later check if all correct guesses made
 let underscoreList = []; // array of underscores same length as currWord
 let numGuesses = 15;    // number of guesses left
 let guessedLettersList = [];    // letters guessed already
@@ -27,6 +29,9 @@ const underscoreMaker = function() {
 }
 
 console.log(underscoreMaker()); //DELETE check, make sure to ADD TO GAME
+numGuessesP.innerText = 15;
+numWinsP.innerText = 0;
+underscoresP.innerText = underscoreList;
 
 
 const game = function(event) {
@@ -48,13 +53,12 @@ const game = function(event) {
                 underscoresP.innerText = underscoreList;
             }
         }
+        winOrlose();   
     } else {
         numGuesses--;
         numGuessesP.innerText = numGuesses;
-        if (numGuesses === 0) {
-            alert('Game Over');
-            gameOver();
-        }
+        underscoresP.innerText = underscoreList;
+        winOrlose();
         console.log(numGuesses); //DELETE check    
     }
 
@@ -62,25 +66,38 @@ const game = function(event) {
 
 document.addEventListener('keypress', game);
 
-//game over if numGuesses hits 0, resets game except for numWins
-const gameOver = function() {
+const winOrlose = function() {
+    if(underscoreList.includes('_') === false) {
+        numWins++;
+        numWinsP.innerText = numWins;
+        alert('You won!');
+        reset();
+    }
+
+    if (numGuesses === 0) {
+        alert('You lost! :( ')
+        reset();
+        console.log(currWord); //DELETE
+        console.log(currWordList);  //DELETE
+        console.log(underscoreList); //DELETE
+    }
+}
+
+
+const reset = function() {
     currWord = flowerList[Math.floor(Math.random() * flowerList.length)];
     currWordList= currWord.split('');   
     underscoreList = []; 
     numGuesses = 15;    
     guessedLettersList = [];
+    correctGuessesCounter = 0;
+
     underscoreMaker();  
+
     underscoresP.innerText = underscoreList;
     numGuessesP.innerText = 15;
     guessedLetsP.innerText = guessedLettersList;
-
-    console.log(currWord); //DELETE
-    console.log(currWordList);  //DELETE
-    console.log(underscoreList); //DELETE
 }
-
-
-
 
 
 
