@@ -53,8 +53,7 @@ const game = function(event) {
             }
         }
         winOrlose();    
-    } 
-    else {
+    } else {
         numGuesses--;
         numGuessesP.innerText = numGuesses;
         underscoresP.innerText = underscoreList.join(' ');
