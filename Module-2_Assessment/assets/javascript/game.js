@@ -41,10 +41,8 @@ const underscoreMaker = function() {
     return underscoreList;
 }
 
-// initialize display before game starts
+// initialize display of underscores before game starts
 underscoreMaker();
-numGuessesP.innerText = 15;
-numWinsP.innerText = 0;
 underscoresP.innerText = underscoreList.join(' ');
 
 const game = function(event) {
