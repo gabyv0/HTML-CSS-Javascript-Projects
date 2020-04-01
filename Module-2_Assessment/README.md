@@ -11,3 +11,8 @@ The number of letters the word to be guessed has is displayed
 as underscores, right when you open the page.
 
 It increments your wins, as displayed on the page. 
+
+### Attributions
+
+icon made by smallikeart on flaticon.com
+photos from pixabay.com

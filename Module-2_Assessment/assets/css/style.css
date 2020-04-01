@@ -4,12 +4,12 @@ body {
 }
 
 .container {
-    background-color: rgb(255, 209, 216);
+    background-color: rgb(209, 250, 209);
     color: black;
     margin-top: 40px;
     padding: 1.5% 2%;
     width: 960px;
-    border: 2px solid rgb(184, 134, 184);
+    border: 2px solid rgb(165, 235, 165);
 }
 
 .startImg {
@@ -30,9 +30,26 @@ h2, h3 {
 
 h1 {
     font-family: 'Abril Fatface', cursive;
-    color: black;
+    color: rgb(252, 176, 189);
+}
+
+h2 {
+    color: pink;
 }
 
 p {
     font-size: larger;
+}
+
+#icon {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.iconImg {
+    height: 100px;
+    width: 100px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
