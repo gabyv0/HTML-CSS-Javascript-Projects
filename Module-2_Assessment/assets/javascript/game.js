@@ -52,7 +52,7 @@ const game = function(event) {
     if(guessedLettersList.includes(eventKey) === false) {
         guessedLettersList.push(eventKey);
         guessedLetters += ` ${eventKey}`;
-        guessedLetsP.innerText = guessedLetters;
+        guessedLetsP.innerText = guessedLetters.toUpperCase();
 
         // if guess is incorrect and has not previously been guessed, -1 to guesses left
         if (currWordList.includes(eventKey) === false) {
