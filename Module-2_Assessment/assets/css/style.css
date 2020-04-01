@@ -13,8 +13,9 @@ body {
 }
 
 .startImg {
-    max-width: 100%;
+    width: 400px;
     height: 400px;
+    margin-left: 15px;
 }
 
 h1, h2, h3, p {
